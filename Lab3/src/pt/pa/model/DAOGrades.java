@@ -7,7 +7,7 @@ public interface DAOGrades {
 
     StudentGrade get(String id);
 
-    List<StudentGrade> getAll(GradeSorting gSorting) throws CourseGradesException, NullPointerException;
+    List<StudentGrade> getAll() throws CourseGradesException, NullPointerException;
 
     void add(StudentGrade t);
 

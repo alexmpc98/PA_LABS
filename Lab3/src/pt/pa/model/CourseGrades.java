@@ -61,7 +61,8 @@ public class CourseGrades {
      * @return collection of grades
      */
     public Collection<StudentGrade> list() {
-        return this.daoGrades.getAll(this.gSorting);
+        this.gSorting.sort(this.daoGrades.getAll());
+        return this.daoGrades.getAll();
     }
 
     /**
@@ -74,7 +75,7 @@ public class CourseGrades {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(this.course + "\n");
-        for(StudentGrade g : this.daoGrades.getAll(this.gSorting)) {
+        for(StudentGrade g : list()) {
             sb.append( String.format("%10s | %-30s | %2d\n",
                     g.getId(), g.getName(), g.getGrade()));
         }
@@ -102,11 +103,11 @@ public class CourseGrades {
     }
 
     public double computeStatistic() throws CourseGradesException {
-        if(Double.compare(this.s.compute(new ArrayList<>(this.daoGrades.getAll(gSorting))),Double.NaN) == 0){
+        if(Double.compare(this.s.compute(new ArrayList<>(this.daoGrades.getAll())),Double.NaN) == 0){
             throw new CourseGradesException("The array doesn't exist or doesn't have values!");
         }
         else {
-            return this.s.compute(new ArrayList<>(this.daoGrades.getAll(gSorting)));
+            return this.s.compute(new ArrayList<>(this.daoGrades.getAll()));
         }
     }
 }

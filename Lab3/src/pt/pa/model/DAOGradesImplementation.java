@@ -24,25 +24,24 @@ public class DAOGradesImplementation implements DAOGrades{
      * @return collection of grades
      */
     @Override
-    public List<StudentGrade> getAll(GradeSorting gradeSorting) {
+    public List<StudentGrade> getAll() {
         List<StudentGrade> list = new ArrayList<>( this.results.values() );
-        gradeSorting.sort(list);
         return list;
     }
 
     /**
      * Adds a grade to the course results
      * @param g grade to add
-     * @throws CourseGradesException if already exists a result for the student contained in <code>g</code>
-     * @throws NullPointerException if <code>g</code> is null
+     * @throws DAOGradesException if already exists a result for the student contained in <code>g</code>
+     * @throws DAOGradesNotNullException if <code>g</code> is null
      */
     @Override
-    public void add(StudentGrade g) throws CourseGradesException, NullPointerException{
+    public void add(StudentGrade g) throws DAOGradesException {
         if(g == null)
-            throw new NullPointerException("StudentGrade cannot be null.");
+            throw new DAOGradesNotNullException("StudentGrade cannot be null.");
 
         if(results.containsKey(g.getId()))
-            throw new CourseGradesException("Student already exists.");
+            throw new DAOGradesException("Student already exists.");
         results.put(g.getId(), g);
     }
 
@@ -52,13 +51,13 @@ public class DAOGradesImplementation implements DAOGrades{
      * @param sGrade Student Grade to be modified
      * @param grade new grade for the student
      * @return previous grade
-     * @throws CourseGradesException if no student with <code>studentId</code> exist in the current results
+     * @throws DAOGradesException if the grade isn't between [0,20]
      */
     @Override
-    public int update(StudentGrade sGrade, int grade) throws CourseGradesException {
-        if(grade < 0 || grade > 20) throw new CourseGradesException("Grade must be in [0,20].");
+    public int update(StudentGrade sGrade, int grade) throws DAOGradesException {
+        if(grade < 0 || grade > 20) throw new DAOGradesException("Grade must be in [0,20].");
         if(!results.containsKey(sGrade.getId()))
-            throw new CourseGradesException("Student does not exist: " + sGrade.getId());
+            throw new DAOGradesException("Student does not exist: " + sGrade.getId());
         StudentGrade studentGrade = results.get(sGrade.getId());
         int oldGrade = studentGrade.updateGrade(grade);
         return oldGrade;

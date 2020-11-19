@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b32d21-f116-4899-b8ae-ef7952421e53" name="Default Changelist" comment="" />
+    <list default="true" id="41b32d21-f116-4899-b8ae-ef7952421e53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pt/pa/model/DAOGradesException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/pa/model/DAOGradesNotNullException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/pa/model/CourseGrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/pa/model/CourseGrades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/pa/model/DAOGrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/pa/model/DAOGrades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/pa/model/DAOGradesImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/pa/model/DAOGradesImplementation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,9 +43,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1kOE9yUBJXMNKismFBZIJLvJ0OF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -169,11 +178,11 @@
     <state x="-1155" y="232" key="#com.intellij.ide.util.MemberChooser/-1920.6.1920.1040/0.0.1920.1040@-1920.6.1920.1040" timestamp="1605613564468" />
     <state x="807" y="224" key="#com.intellij.ide.util.MemberChooser/-1920.6.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605650126639" />
     <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1605792181943" />
-    <state x="529" y="290" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605698422784">
+    <state x="529" y="290" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605818967106">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.6.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605648500089" />
-    <state x="529" y="290" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1605698422784" />
+    <state x="529" y="290" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1605818967106" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605652191747">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
