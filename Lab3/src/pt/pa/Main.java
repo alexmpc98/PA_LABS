@@ -10,6 +10,7 @@ public class Main {
         grades.changeStatistic(new StatisticMedian());
         System.out.println("Median - " + grades.computeStatistic());
 
+        grades.changeStatistic(new StatisticArithmeticAvg());
         System.out.println("Average - " + grades.computeStatistic());
         grades.changeStatistic(new StatisticHighestGrade());
         System.out.println("Highest Grade - " + (int)grades.computeStatistic());
