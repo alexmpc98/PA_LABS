@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Date;
 
 /**
- * @author André Sabino
+ * @author Alexandre Coelho
  */
 public class ShoppingCartController {
     private ShoppingCart cart;

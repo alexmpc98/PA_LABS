@@ -1,6 +1,8 @@
 package com.pa.patterns.memento.view;
 
+import com.pa.patterns.memento.model.Caretaker;
 import com.pa.patterns.memento.model.Product;
+import com.pa.patterns.memento.model.ShoppingCart;
 import com.pa.patterns.memento.model.ShoppingCartController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -22,6 +24,7 @@ public class GUI extends Application {
     private ShoppingCartController shoppingCartController;
     private ListView<Product> listViewCartContents;
     private ComboBox<Date> comboBoxMemento;
+    private int columnIndex,comboBoxValue;
 
     public static void main(String[] args) {
         launch(args);
@@ -29,9 +32,9 @@ public class GUI extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        shoppingCartController = new ShoppingCartController();
         GridPane gridPaneMain = new GridPane();
-
+        GridPane gridPaneCartContents = new GridPane();
+        ComboBox cBox = new ComboBox();
         // Add product
         GridPane gridPaneAddProduct = new GridPane();
         Label labelAddProduct = new Label("Add products to cart");
@@ -57,6 +60,8 @@ public class GUI extends Application {
                     error("Missing product information.");
                 } else {
                     try {
+                        String[] arrOfStr = cBox.getValue().toString().split("-");
+                        comboBoxValue = Integer.parseInt(arrOfStr[arrOfStr.length-1].trim());
                         String name = textFieldProductName.getText();
                         double price = Double.parseDouble(textFieldPrice.getText());
                         shoppingCartController.addProduct(name, price);
@@ -67,48 +72,43 @@ public class GUI extends Application {
                 }
             }
         });
-
-        gridPaneMain.add(gridPaneAddProduct, 0, 0);
-
-        // Shopping cart
-        GridPane gridPaneCartContents = new GridPane();
-        Label labelCartContents = new Label("Cart contents");
-        labelCartContents.setStyle("-fx-font-weight: bold");
-        listViewCartContents = new ListView<>();
-        gridPaneCartContents.add(labelCartContents, 0, 0);
-        gridPaneCartContents.add(listViewCartContents, 0, 1);
-
-        HBox hBoxUndo = new HBox();
-
-        comboBoxMemento = new ComboBox<>();
-        comboBoxMemento.setPromptText("Select a time to restore");
-//        hBoxUndo.getChildren().add(comboBoxMemento);
-
-        Button buttonUndo = new Button("Undo");
-        hBoxUndo.getChildren().add(buttonUndo);
-
-        hBoxUndo.setAlignment(Pos.CENTER_RIGHT);
-        hBoxUndo.setStyle("-fx-padding: 2px 0 0 0");
-        gridPaneCartContents.add(hBoxUndo, 0, 2);
-        GridPane.setHgrow(listViewCartContents, Priority.ALWAYS);
-
-        buttonUndo.setOnAction(new EventHandler<ActionEvent>() {
+        Button newCart = new Button("Add new cart!");
+        columnIndex = 1;
+        newCart.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                shoppingCartController.undo();
-                updateProductCartList();
+                if(columnIndex < 5 && columnIndex >= 1) {
+                    Label labelCartContents = new Label("Cart contents");
+                    labelCartContents.setStyle("-fx-font-weight: bold");
+                    listViewCartContents = new ListView<>();
+                    gridPaneCartContents.add(labelCartContents, columnIndex, 0);
+                    gridPaneCartContents.add(listViewCartContents, columnIndex, 1);
+                    gridPaneCartContents.setId(String.valueOf(columnIndex));
+                    cBox.getItems().add("ShoppingCart - " + columnIndex);
+                    gridPaneMain.add(gridPaneCartContents, columnIndex-1, 1);
+                    Button buttonUndo = new Button("Undo");
+                    GridPane.setHgrow(listViewCartContents, Priority.ALWAYS);
+                    buttonUndo.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent actionEvent) {
+                            shoppingCartController.undo();
+                            updateProductCartList();
+                        }
+                    });
+                    gridPaneCartContents.add(buttonUndo, columnIndex, 2);
+                    columnIndex++;
+                    updateProductCartList();
+                }
             }
         });
-
-        gridPaneMain.add(gridPaneCartContents, 0, 1);
-
-        updateProductCartList();
-
+        gridPaneAddProduct.add(newCart,3,2);
+        gridPaneAddProduct.add(cBox,3,1);
+        gridPaneMain.add(gridPaneAddProduct, 0, 0);
         gridPaneMain.setStyle("-fx-padding: 5px");
         Scene scene = new Scene(gridPaneMain);
         stage.setTitle("Shopping Cart");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.show();
     }
 

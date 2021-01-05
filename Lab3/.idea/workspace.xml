@@ -19,15 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b32d21-f116-4899-b8ae-ef7952421e53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pt/pa/model/DAOGradesException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pt/pa/model/DAOGradesNotNullException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/pa/model/CourseGrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/pa/model/CourseGrades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/pa/model/DAOGrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/pa/model/DAOGrades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/pa/model/DAOGradesImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/pa/model/DAOGradesImplementation.java" afterDir="false" />
-    </list>
+    <list default="true" id="41b32d21-f116-4899-b8ae-ef7952421e53" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +52,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab4" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -183,10 +175,10 @@
     </state>
     <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.6.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605648500089" />
     <state x="529" y="290" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1605818967106" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605652191747">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1608116965144">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605652191747" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608116965144" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1605716650842">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
